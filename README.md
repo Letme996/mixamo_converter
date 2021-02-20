@@ -1,6 +1,6 @@
 # Mixamo Converter
 is a Blender Plugin that Converts Mixamo animations to work in Unreal Engine 4 with root motion
-Blender 2.78 or newer needed to work
+Blender 2.80 or newer needed to work. For blender 2.78+ use blender27 branch of the converter.
 
 ### It can
 * convert single animations (FBX or Collada) if they are previously imported by the user
@@ -11,16 +11,15 @@ Blender 2.78 or newer needed to work
 * first you have to get blender from https://www.blender.org/download/
 * Download Mixamo Converter repository as ZIP (no need to unpack it)
 * Open up Blender
-* go to: File -> User Preferences -> Addons -> Install from File...
+* go to: Edit -> Preferences -> Addons -> Install from File...
 * select the ZIP you downloaded and click install from file
-* now it should be the only addon visibly and you can enable it
-* if you want to keep it enabled over multiple blender sessions you can click "save user preferences" on the bottom of the window
+* now it should be in the list (search for mixamo) and you can enable it
 
 ## Usage
-The Addon UI is located in the Toolshelve of the 3D view.
-You can open it by pressing T with the mouse in the 3D View
-or with the little plus sign on the left side of the 3D View
-In the Toolshelve there are several tabs on the left side,
+The Addon UI is located in the UI Region of the 3D view.
+You can open it by pressing N with the mouse in the 3D View
+or with the little arrow on the right side of the 3D View
+In the UI Area there are several tabs on the right side,
 one of them should be named Mixamo
 
 ### Options: [Use Z] [On Ground]
@@ -96,6 +95,10 @@ Very kludgy workaround which can result in bones being out of place in animation
 Can be used to fix rotational flickering occuring in some animations after export (seems to be an exporter bug). (mostly observed on legs but can be used on any bones)
 It moves the tip joint of given bones by the given vector in the restpose.
 
+#### Option [Foot Bone Workaround]
+Workaround which attempts to fix the twisting of the foot bones (specifically, LeftToeBase/ball_l and RightToeBase/ball_r) of certain meshes,
+which may appear rotated by 180 degrees after conversion.
+
 ### Batch Conversion:
 * Here you can specify an Input- and Outputpath for Batchconversion
 * the output files will have the same names as the input files, existing files will be overwritten
@@ -113,7 +116,8 @@ so only use it in a newly startet instance of blender or an empty scene
 
 #### Importing a mixamo character into unreal with and retarget animations
 The video starts showing how to install the mixamoconv plugin into blender.
-Then it describe how to quickly batch convert a mixamo character (same procedure for anims), import it to unreal, reterget the mixamo skeleton and retarget some maniquine anims to the mixamo skeleton. 
+Then it describe how to quickly batch convert a mixamo character (same procedure for anims), import it to unreal, reterget the mixamo skeleton and retarget some maniquine anims to the mixamo skeleton.
+Remember the converter is now located in the Right Panel (UI) which can be opened by pressing N.
 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/z97w4vrm8Eo/0.jpg)](https://www.youtube.com/watch?v=z97w4vrm8Eo)    
